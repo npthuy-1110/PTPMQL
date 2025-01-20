@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="w3-container">
+        <h2>Hà Nội</h2>
+      </div>
+      
+      <div class="w3-bar w3-black">
+        <button class="w3-bar-item w3-button" onclick="openCity('Nhật Tân')">Cầu Nhật Tân</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Văn Miếu')">Văn Miếu – Quốc Tử Giám</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('Lăng Chủ tịch Hồ Chí Minh')">Lăng Chủ tịch Hồ Chí Minh</button>
+      </div>
+      
+      <div id="Nhật Tân" class="w3-container city">
+        <h2>Cầu Nhật Tân</h2>
+        <p>Cầu Nhật Tân là một cây cầu tại thủ đô Hà Nội, đây là cây cầu dây văng lớn nhất Việt Nam hiện tại được xây dựng với tổng mức đầu tư hơn 13.626 tỷ đồng nằm trong tổng số 7 cầu bắc qua sông Hồng đoạn Hà Nội nối quận Tây Hồ với huyện Đông Anh.</p>
+      </div>
+      
+      <div id="Văn Miếu" class="w3-container city" style="display:none">
+        <h2>Văn Miếu – Quốc Tử Giám</h2>
+        <p>Văn Miếu – Quốc Tử Giám là quần thể di tích đa dạng, phong phú hàng đầu của thành phố Hà Nội, nằm ở phía Nam kinh thành Thăng Long. </p> 
+      </div>
+      
+      <div id="Lăng Chủ tịch Hồ Chí Minh" class="w3-container city" style="display:none">
+        <h2>Lăng Chủ tịch Hồ Chí Minh</h2>
+        <p>Lăng Chủ tịch Hồ Chí Minh, còn gọi là Lăng Hồ Chủ tịch, Lăng Bác, là nơi gìn giữ thi hài Chủ tịch Hồ Chí Minh. </p>
+      </div>
+      
+      <script>
+      function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        document.getElementById(cityName).style.display = "block";  
+      }
+      </script>
+</body>
+</html>

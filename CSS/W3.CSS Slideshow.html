@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .mySlides {display:none;}
+        </style>
+        <body>
+        
+        <h2 class="w3-center">Điểm tham quan tại Hạ Long</h2>
+        
+        <div class="w3-content w3-display-container">
+          <img class="mySlides" src="https://travelhalong.com.vn/UserFiles/images/C%E1%BA%A3nh%20V%E1%BB%8Bnh%20H%E1%BA%A1%20Long/9eea8b56afc74c9915d6.jpg" style="width:80%">
+          <img class="mySlides" src="https://travelhalong.com.vn/UserFiles/images/%E1%BA%A2nh%20H%E1%BA%A1%20Long/Cong-vien-Dragon-Park-Ha-Long.jpg" style="width:80%">
+          <img class="mySlides" src="https://travelhalong.com.vn/UserFiles/images/%E1%BA%A2nh%20H%E1%BA%A1%20Long/du-lich-ha-long-ve-dem-h5.jpg" style="width:80%">
+          <img class="mySlides" src="https://travelhalong.com.vn/UserFiles/images/%E1%BA%A2nh%20H%E1%BA%A1%20Long/vong-quay-mat-troi-ha-long-2.jpg" style="width:80%">
+        
+          <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+          <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        
+        <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+        </script>
+        <style>
+            .mySlides {display:none;}
+            </style>
+            </head>
+            
+            <body>
+            
+            <h2 class="w3-center">Hạ Long</h2>
+            
+            <div class="w3-content w3-section" style="max-width:80px">
+              <img class="mySlides" src="https://travelhalong.com.vn/UserFiles/images/%E1%BA%A2nh%20H%E1%BA%A1%20Long/cong-vien-nuoc-800x500.jpg" style="width:80%">
+              <img class="mySlides" src="https://travelhalong.com.vn/UserFiles/images/%E1%BA%A2nh%20H%E1%BA%A1%20Long/BaotangQuangNinhVnExpress-1552-2398-6213-1552445621_1200x0.jpg" style="width:80%">
+              <img class="mySlides" src="https://travelhalong.com.vn/UserFiles/images/%E1%BA%A2nh%20H%E1%BA%A1%20Long/congvienhoahalong2.jpg" style="width:80%">
+            </div>
+            
+            <script>
+            var myIndex = 0;
+            carousel();
+            
+            function carousel() {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}    
+              x[myIndex-1].style.display = "block";  
+              setTimeout(carousel, 2000); // Change image every 2 seconds
+            }
+            </script>
+</body>
+</html>
