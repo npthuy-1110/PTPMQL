@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="w3-container">
+        <h2>Bảng tên</h2>
+      
+        <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="myFunction()">
+      
+        <table class="w3-table-all w3-margin-top" id="myTable">
+          <tr>
+            <th style="width:60%;">Name</th>
+            <th style="width:40%;">Country</th>
+          </tr>
+          <tr>
+            <td> Kylian Mbappe/td>
+            <td>Pháp</td>
+          </tr>
+          <tr>
+            <td>Marco Asensio</td>
+            <td>Tây Ban Nha</td>
+          </tr>
+          <tr>
+            <td> Cristiano Ronaldo</td>
+            <td>Bồ Đào Nha</td>
+          </tr>
+          <tr>
+            <td>Neymar</td>
+            <td>Brazil</td>
+          </tr>
+        </table>
+      
+        <p><strong>Tip:</strong> Top 5 cầu thủ bóng đá đẹp trai nhất</p>
+      </div>
+      
+      <script>
+      function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+      </script>
+      <div class="w3-container">
+        <h2>Bảng tên</h2>
+      
+        <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="myFunction()">
+        <ul class="w3-ul w3-margin-top" id="myUL">
+          <li>Kylian Mbappe</li>
+          <li>Son Heung Min</li>
+          <li>Antoine Griezmann </li>
+          <li>Joao Felix</li>
+        </ul>
+      </div>
+      
+      <script>
+      function myFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+          txtValue = li[i].textContent || li[i].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+      </script>
+</body>
+</html>
