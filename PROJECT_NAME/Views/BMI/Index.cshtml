@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "Tính Chỉ Số BMI";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Index" asp-controller="BMI" method="post">
+    <div class="mb-3">
+        <label class="form-label">Cân nặng (kg):</label>
+        <input name="weight" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Chiều cao (m):</label>
+        <input name="height" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Tính BMI</button>
+</form>
+
+@if (ViewBag.BMI != null)
+{
+    <div class="alert alert-info mt-3">
+        <strong>BMI:</strong> @ViewBag.BMI <br />
+        <strong>Phân loại:</strong> @ViewBag.Category
+    </div>
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger mt-3">
+        @ViewBag.Error
+    </div>
+}
