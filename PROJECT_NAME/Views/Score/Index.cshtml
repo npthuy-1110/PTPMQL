@@ -1,0 +1,28 @@
+@model PROJECT_NAME.Models.Score
+@{
+    ViewData["Title"] = "Tính điểm môn học dựa trên điểm thành phần A, B, C";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Index" asp-controller="Score" method="post">
+    <div>
+        <label for="ScoreA">Điểm A:</label>
+        @Html.TextBoxFor(m => m.ScoreA, new { type = "number", required = true })
+    </div>
+    <div>
+        <label for="ScoreB">Điểm B:</label>
+        @Html.TextBoxFor(m => m.ScoreB, new { type = "number", required = true })
+    </div>
+    <div>
+        <label for="ScoreC">Điểm C:</label>
+        @Html.TextBoxFor(m => m.ScoreC, new { type = "number", required = true })
+    </div>
+    <button type="submit">Tính Điểm</button>
+</form>
+
+@if (ViewBag.TotalScore != null)
+{
+    <h3>Điểm tổng kết: @ViewBag.TotalScore</h3>
+    <h3>Thông báo: @ViewBag.Message</h3>
+}

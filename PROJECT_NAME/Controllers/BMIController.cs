@@ -6,7 +6,7 @@ namespace PROJECT_NAME.Controllers
     public class BMIController : Controller
     { 
         // GET: /BMI/
-       
+   
         public IActionResult Index()
         {
             return View();
@@ -27,5 +27,4 @@ namespace PROJECT_NAME.Controllers
             return View();
         }
     }
-
 }
