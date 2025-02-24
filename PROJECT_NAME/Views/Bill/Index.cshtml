@@ -1,0 +1,25 @@
+@model PROJECT_NAME.Models.Bill
+
+@{
+    ViewData["Title"] = "Tính tiền hoá đơn dựa trên số lượng và đơn giá";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Index" asp-controller="Bill" method="post">
+    <div>
+        <label for="Quantity">Số lượng:</label>
+        @Html.TextBoxFor(m => m.Quantity, new { type = "number", required = true, min = "1" })
+    </div>
+    <div>
+        <label for="UnitPrice">Đơn giá:</label>
+        @Html.TextBoxFor(m => m.UnitPrice, new { type = "number", required = true, min = "0" })
+    </div>
+    <button type="submit">Tính Tiền</button>
+</form>
+
+@if (ViewBag.TotalAmount != null)
+{
+    <h3>Tiền hoá đơn: @ViewBag.TotalAmount</h3>
+    <h3>@ViewBag.Message</h3>
+}
