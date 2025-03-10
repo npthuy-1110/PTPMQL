@@ -1,10 +1,42 @@
-<h1>Dữ liệu từ Controller gửi về là:Address @ViewBag.infoPerson</h1>
-<form asp-action="Index">
-    <label>Nhập Person Id</label>
-    <input type="text" name="PersonId">
-    <label>Nhập họ tên:</label>
-    <input type="text" name="FullName">
-    <label>Nhập địa chỉ:</label>
-    <input type="text" name="Address">
-    <input type="submit" value="Gửi dữ liệu">
-</form>
+@model IEnumerable<PROJECT_NAME.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PersonId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PersonId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

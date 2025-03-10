@@ -1,0 +1,32 @@
+@model PROJECT_NAME.Models.Person
+
+@{
+    ViewBag["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to Delete this?</h3>
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="row">
+        <dl class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FullName)
+        </dl>
+         <dd class="col-sm-18">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dl class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dl>
+         <dd class="col-sm-18">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PersonId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
