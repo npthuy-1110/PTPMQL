@@ -24,7 +24,7 @@ namespace PROJECT_NAME.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonId, Fullname,Address")] Person person)
+        public async Task<IActionResult> Create([Bind("PersonId, Fullname,Address,Email")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -49,7 +49,7 @@ namespace PROJECT_NAME.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("PersonId, Fullname,Address")] Person person)
+        public async Task<IActionResult> Edit(string id, [Bind("PersonId, Fullname,Address,Email")] Person person)
         {
             if (id != person.PersonId)
             {
