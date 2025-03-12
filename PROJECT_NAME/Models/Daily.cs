@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace PROJECT_NAME.Models.Models
 {
     public class Daily
     {
+        [Key]
         public required string MaDaiLy { get; set; }
         public required string TenDaiLy { get; set; }
         public required string DiaChi { get; set; }
