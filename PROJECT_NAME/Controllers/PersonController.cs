@@ -2,6 +2,7 @@ using System.Data;
 using DemoMVC.Models.Process;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml;
 using PROJECT_NAME.Data;
 using PROJECT_NAME.Models;
 
@@ -16,7 +17,22 @@ namespace PROJECT_NAME.Controllers
         {
             _context = context;
         }
-
+        [HttpGet]
+        public IActionResult Download()
+        {
+          var fileName = "YourFileName" + ".xlsx";
+          using (ExcelPackage excelPackage = new ExcelPackage())
+          {
+               ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+               worksheet.Cells["A1"].Value = "PersonID";
+               worksheet.Cells["B1"].Value = "FullName";
+               worksheet.Cells["C1"].Value = "Address";
+               var personList = _context.Person.ToList();
+               worksheet.Cells["A2"].LoadFromCollection(personList);
+               var stream = new MemoryStream(excelPackage.GetAsByteArray());
+               return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+          }
+        }
         public async Task<IActionResult> Index()
         {
             var model = await _context.Person.ToListAsync();
